@@ -21,7 +21,7 @@ mongoose.connect(keys)
 .then(()=>{console.log("connection is successfull")})
 .catch((err)=>console.log(err,"real error"))
 
-app.get("/",()=>{
+app.get("/",(req,res)=>{
     res.send("hello")
 })
 
