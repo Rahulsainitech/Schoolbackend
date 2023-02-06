@@ -16,9 +16,10 @@ app.use("/api/news&event",require("./Routers/newsRouter"))
 app.use("/api/faq",require("./Routers/queRouter"))
 app.use("/api/payment",require("./Routers/paymentRoute"))
 //database connection
+mongoose.set('strictQuery', true)
 mongoose.connect(keys)
 .then(()=>{console.log("connection is successfull")})
-.catch((err)=>console.log(err))
+.catch((err)=>console.log(err,"real error"))
 
 app.get("/",()=>{
     res.send("hello")
